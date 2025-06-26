@@ -1,3 +1,4 @@
+// contact.h
 #pragma once
 #include <string>
 
@@ -5,12 +6,15 @@
 
 class Contact {
  public:
+  Contact() = default;
   void set(const std::string& name, const PhoneNumber& phoneNumber);
-  void get();
+  std::string getName() const;
+  PhoneNumber getNumber() const;
+  void show() const;
 
  private:
   std::string name_;
   PhoneNumber phoneNumber_;
-  bool checkName(const std::string& name);
+  bool checkName(const std::string& name) const;
   void formatName(std::string& name);
 };

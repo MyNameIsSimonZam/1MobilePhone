@@ -1,3 +1,4 @@
+// phone.h
 #pragma once
 
 #include <vector>
@@ -6,10 +7,11 @@
 
 class Phone {
  public:
-  void Add(const Contact& contact);
-  void Call();
-  void Sms();
-  void Exit();
+  Phone() = default;
+  void set(const Contact& contact);
+  void get();
+  void call();
+  void sms();
 
  private:
   std::vector<Contact> contacts_{};

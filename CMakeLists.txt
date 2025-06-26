@@ -8,7 +8,7 @@ add_executable(1MobilePhone)
 
 target_sources(1MobilePhone PRIVATE
   src/main.cpp
-  src/helper.cpp
+  src/function.cpp
   src/phone.cpp
   src/contact.cpp
   src/phoneNumber.cpp

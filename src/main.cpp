@@ -1,10 +1,16 @@
+// main.cpp
 #include <iostream>
 
-#include "helper.h"
+#include "function.h"
 #include "phone.h"
 
 int main() {
+  phone_emulator::printIntro();
   Phone phone{};
-  callCommand();
+  while (exit) {
+    phone_emulator::Command command{phone_emulator::parseCommand()};
+    if (command == phone_emulator::Command::Exit) break;
+    phone_emulator::executeCommand(command, phone);
+  }
   return 0;
 }
