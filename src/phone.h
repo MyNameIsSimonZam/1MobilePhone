@@ -9,7 +9,7 @@ class Phone {
  public:
   Phone() = default;
   void set(const Contact& contact);
-  void get();
+  void printContacts();
   void call();
   void sms();
 

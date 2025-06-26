@@ -38,6 +38,7 @@ bool Contact::checkName(const std::string& name) const {
   return true;
 }
 void Contact::formatName(std::string& name) {
+  if (name.empty()) return;
   name[0] = static_cast<char>(std::toupper(name[0]));
   if (name.size() > 1) {
     std::ranges::transform(name.begin() + 1, name.end(), name.begin() + 1, ::tolower);

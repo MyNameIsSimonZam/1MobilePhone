@@ -8,7 +8,7 @@
 void Phone::set(const Contact& contact) {
   contacts_.push_back(contact);
 }
-void Phone::get() {
+void Phone::printContacts() {
   std::cout << "Size: " << contacts_.size() << "\n";
   for (const auto x : contacts_) {
     x.show();
@@ -19,7 +19,7 @@ void Phone::call() {
   std::cout << "Enter the phone name or phone number: ";
   std::string request;
   std::getline(std::cin, request);
-  for (const auto x : contacts_) {
+  for (const auto& x : contacts_) {
     if (request == x.getName() || request == x.getNumber()) {
       std::cout << "CALL <";
       x.show();
@@ -34,7 +34,8 @@ void Phone::sms() {
   std::string request;
   std::string message;
   std::getline(std::cin, request);
-  for (const auto x : contacts_) {
+  // Comparison works because operator== is overloaded for PhoneNumber and std::string
+  for (const auto& x : contacts_) {
     if (request == x.getName() || request == x.getNumber()) {
       std::cout << "SMS <";
       x.show();

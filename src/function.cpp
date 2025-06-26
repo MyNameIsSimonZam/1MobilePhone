@@ -12,7 +12,7 @@ void addNewContact(Phone& phone) {
   PhoneNumber phoneNumber{};
   while (true) {
     std::cout << "Enter a number: +7";
-    std::string inNumber;
+    std::string inNumber{};
     std::getline(std::cin, inNumber);
     try {
       phoneNumber = PhoneNumber{inNumber};
@@ -24,7 +24,7 @@ void addNewContact(Phone& phone) {
   Contact contact{};
   while (true) {
     std::cout << "Enter a name: ";
-    std::string inName;
+    std::string inName{};
     std::getline(std::cin, inName);
     try {
       contact.set(inName, phoneNumber);
@@ -74,7 +74,7 @@ void executeCommand(phone_emulator::Command& cmd, Phone& phone) {
       break;
     }
     case Command::ShowContacts: {
-      phone.get();
+      phone.printContacts();
       break;
     }
     case Command::Call: {
